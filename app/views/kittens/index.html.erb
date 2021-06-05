@@ -1,0 +1,20 @@
+<h1>All Cats</h1>
+
+
+<% @kittens.each do |kitten| %>
+    <div class="row">
+        <div class="name">
+            <p> <%= kitten.name %> </p>
+        </div>
+        <div class="links">
+            <%= link_to "More Details", kitten_path(kitten.id) %>
+            <%= link_to "Edit", edit_kitten_path(kitten.id) %>
+            <%= link_to "Delete", kitten_path(kitten.id), method: :delete %>
+        </div>
+
+    </div>
+
+<% end %>
+<%= link_to "Create Cat", new_kitten_path %>
+
+
